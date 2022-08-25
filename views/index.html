@@ -1,0 +1,37 @@
+<!--
+ * @Description: 
+ * @Author: Tong Chen
+ * @Date: 2022-08-25 17:20:17
+ * @LastEditTime: 2022-08-25 18:13:03
+ * @LastEditors:  
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  Hi
+
+  <!-- 2. 定义回调函数, 用于处理数据 -->
+  <script>
+    function f (data) {
+      console.log("enter", data)
+    }
+  </script>
+
+  <!-- jsonp实现跨域(JSON with Padding - 用js函数包裹json数据) -->
+  <!-- 实现基础: 1. script标签的src属性允许跨域, 因此可以请求到不同域的资源 -->
+  <!-- 3. 将定义好的处理数据的函数以url传给服务器: http://www.abc.com:8080/a/?key=value&key2=value2 -->
+  <!-- 4. 服务器从url中拿到函数名, 将函数名和数据进行拼接并传回 -->
+  <!-- 5. 默认 type="text/javascript", 因此服务器传回的东西, 都会被浏览器当作js代码来执行, 即执行了f("...") -->
+  <script src="http://localhost:3001?callback=f">
+  </script>
+</body>
+
+</html>
