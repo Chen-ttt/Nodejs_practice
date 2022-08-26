@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: Tong Chen
  * @Date: 2022-08-25 17:08:54
- * @LastEditTime: 2022-08-25 21:22:45
+ * @LastEditTime: 2022-08-25 22:24:54
  * @LastEditors:  
  */
 var createError = require('http-errors')
@@ -98,5 +98,32 @@ app2.get("/", (req, res) => {
 })
 
 app2.listen(3001)
+
+
+var app3 = express()
+
+const centreData = require("./mockDB/centresDB")
+const manData = require("./mockDB/manufacturersDB")
+const doctorData = require("./mockDB/doctorDB")
+
+app3.all('/mockCentre.action', (req, res) => {
+  console.log("enter app3 - centre mock")
+  res.header("Access-Control-Allow-Origin", "*")
+  res.send(centreData)
+})
+
+app3.all('/mockMan.action', (req, res) => {
+  console.log("enter app3 - man mock")
+  res.header("Access-Control-Allow-Origin", "*")
+  res.send(manData)
+})
+
+app3.all('/mockDoctor.action', (req, res) => {
+  console.log("enter app3 - doctor mock")
+  res.header("Access-Control-Allow-Origin", "*")
+  res.send(doctorData)
+})
+
+app3.listen(3003)
 
 module.exports = app

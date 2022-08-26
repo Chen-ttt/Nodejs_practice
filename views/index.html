@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: Tong Chen
  * @Date: 2022-08-25 17:20:17
- * @LastEditTime: 2022-08-25 21:21:58
+ * @LastEditTime: 2022-08-25 22:05:57
  * @LastEditors:  
 -->
 <!DOCTYPE html>
@@ -30,13 +30,20 @@
   <!-- 3. 将定义好的处理数据的函数以url传给服务器: http://www.abc.com:8080/a/?key=value&key2=value2 -->
   <!-- 4. 服务器从url中拿到函数名, 将函数名和数据进行拼接并传回 -->
   <!-- 5. 默认 type="text/javascript", 因此服务器传回的东西, 都会被浏览器当作js代码来执行, 即执行了f("...") -->
-  <script src="http://localhost:3001?callback=f"></script>
+  <!-- <script src="http://localhost:3001?callback=f"></script> -->
 
 
   <!-- CORS方法 -->
-  <!-- <script>
-    fetch("http://localhost:3001")
-  </script> -->
+  <script>
+    fetch("http://localhost:3003/mock.action")
+      .then(res => console.log(JSON.parse(res)))
+    // .then(data => console.log(data))
+    // var axios = require('axios')
+    // axios.get("/centreMock", { dataType: 'json' })
+    //   .then(res => {
+    //     console.log(res.data)
+    //   })
+  </script>
 
 </body>
 
