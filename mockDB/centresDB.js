@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: Tong Chen
  * @Date: 2022-08-13 15:46:03
- * @LastEditTime: 2022-08-25 22:25:25
+ * @LastEditTime: 2022-09-01 11:25:21
  * @LastEditors:  
  */
 let { centresName } = require("./config")
@@ -10,7 +10,7 @@ let { centresName } = require("./config")
 var Mock = require('mockjs')
 var centreData = Mock.mock({
   "status": 200,
-  "centreInfo|6": [{
+  "centreInfo|24": [{
     // 1. Unique ID
     "ID|+1": 0,
 
@@ -61,9 +61,7 @@ var centreData = Mock.mock({
     },
 
     // 12.
-    "rateComsumption": function () {
-      return Math.floor(this.centreLevel + this.population * 0.01) * 2
-    },
+    "rateComsumption": 0,
 
     // 13.
     "manList": function () {

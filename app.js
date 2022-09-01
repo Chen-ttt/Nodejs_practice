@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: Tong Chen
  * @Date: 2022-08-25 17:08:54
- * @LastEditTime: 2022-08-25 22:24:54
+ * @LastEditTime: 2022-08-31 14:37:32
  * @LastEditors:  
  */
 var createError = require('http-errors')
@@ -114,6 +114,7 @@ app3.all('/mockCentre.action', (req, res) => {
 
 app3.all('/mockMan.action', (req, res) => {
   console.log("enter app3 - man mock")
+  // console.log("man", manData[0].username, manData[0].password)
   res.header("Access-Control-Allow-Origin", "*")
   res.send(manData)
 })
